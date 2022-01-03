@@ -21,6 +21,9 @@ public class Main{
                for(int j = 0; j < 20; j++){
                    if(i == 7 && j == 6){
                         System.out.print("ADIVINHA");
+                        for(int k = 0; k < 6; k++){
+                            System.out.print(" ");
+                        }
                         break;
                         
                    }else{
