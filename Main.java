@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
         
-        
+
+
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
@@ -14,6 +15,25 @@ public class Main{
         int num;
         //boolean flag = true;
         while(true){
+            System.out.println("*********************");
+            for(int i = 0; i < 15; i++){
+                System.out.print("|");
+               for(int j = 0; j < 20; j++){
+                   if(i == 7 && j == 6){
+                        System.out.print("ADIVINHA");
+                        break;
+                        
+                   }else{
+                        
+                        System.out.print(" ");
+                   }
+                   
+               }
+              
+               System.out.print("|");
+               System.out.println();
+            }
+            System.out.println("*********************");
             System.out.println("Digite um número (1 - 100):");
             num = sc.nextInt();    
 
@@ -33,11 +53,38 @@ public class Main{
             //}
         }
         
-
         
+        String[] moves = {"P", "R", "S"};
 
+        String compMove = moves[rand.nextInt(moves.length)];
 
+        String playerMove;
 
+        System.out.println("compMove " +  compMove);
+        
+        while(true){
+            System.out.println("Escolha seu movimento (R, P, S): ");
+            playerMove = sc.nextLine();
+            if(playerMove.equals("R") || playerMove.equals("P") || playerMove.equals("S")){
+                break;
+            }
+        }
+
+        if(compMove.equals(playerMove)){
+            System.out.println("Empate!");
+        }else if(compMove.equals("R") && playerMove.equals("S")){
+            System.out.println("Pedra (Computador) x Tesoura (Usuário)");
+            System.out.println("Computador venceu!");
+        }else if(compMove.equals("P") && playerMove.equals("R")){
+            System.out.println("Papel (Computador) x Pedra (Usuário)");
+            System.out.println("Computador venceu!");
+        }else if(compMove.equals("S") && playerMove.equals("P")){
+            System.out.println("Tesoura (Computador) x Papel (Usuário)");
+            System.out.println("Computador venceu!");
+        }else{
+            System.out.println(compMove + "(Computador) x" + playerMove + "(Usuario)");
+            System.out.println("Você venceu!");
+        }
 
         /*
 
