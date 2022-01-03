@@ -13,6 +13,7 @@ public class Main{
 
         int pseudoAleatorio = rand.nextInt(100) + 1;
         int num;
+        
         //boolean flag = true;
         while(true){
             System.out.println("*********************");
@@ -39,7 +40,7 @@ public class Main{
             System.out.println("*********************");
             System.out.println("Digite um número (1 - 100):");
             num = sc.nextInt();    
-
+            
             if(num == pseudoAleatorio){
                 System.out.println("Você acertou: " + pseudoAleatorio);
                 break;
